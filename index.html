@@ -2839,4 +2839,19 @@ document.addEventListener("click",function(e){const img=e.target.closest("[data-
   }
 }
 </style>
+
+<script>
+(function () {
+  if (!("serviceWorker" in navigator)) return;
+  window.addEventListener("load", function () {
+    // Relative URL keeps the worker valid even if the app folder/domain changes.
+    const swUrl = new URL("sw.js", window.location.href).pathname;
+    navigator.serviceWorker.register(swUrl, { scope: "./" })
+      .catch(function (err) {
+        console.warn("Service Worker registration failed:", err);
+      });
+  });
+})();
+</script>
+
 </body></html>
