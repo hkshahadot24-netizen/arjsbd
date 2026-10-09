@@ -1545,3 +1545,30 @@ html[data-theme="dark"] #app input,html[data-theme="dark"] #app select,html[data
 html[data-theme="dark"] #app table th{background:#172337!important;color:#cbd5e1!important}html[data-theme="dark"] #app table td{border-color:#334155!important}html[data-theme="dark"] #app .tab-active{background:linear-gradient(135deg,#1e293b,#111c2e)!important}
 html[data-theme="dark"] .preferences-panel{background:#111c2e!important;color:#e5e7eb!important;border:1px solid #334155}html[data-theme="dark"] .preferences-panel .text-slate-500{color:#b6c2d2!important}html[data-theme="dark"] .preferences-panel .border{border-color:#334155!important}html[data-theme="dark"] .preferences-panel .bg-slate-100{background:#243247!important;color:#e5e7eb!important}
 #open-preferences{font-size:20px;display:inline-flex;align-items:center;justify-content:center;flex:none}#header-name{max-width:min(42vw,230px);height:auto;max-height:48px;object-fit:contain}#header-tagline{max-width:48vw}
+
+/* FIX: Light theme must override the legacy dark/neon skin so the page never appears black. */
+html[data-theme="light"] body,html[data-theme="light"]{background:#f5f7fb!important;color:#1e293b!important;color-scheme:light}
+html[data-theme="light"] body{background:radial-gradient(circle at 15% 5%,rgba(59,130,246,.07),transparent 28%),linear-gradient(135deg,#f8fafc 0%,#eef4fb 100%)!important;color:#1e293b!important}
+html[data-theme="light"] body:before,html[data-theme="light"] body:after{opacity:.08}
+html[data-theme="light"] #app,html[data-theme="light"] #app > main.app-shell{background:transparent!important;color:#1e293b!important}
+html[data-theme="light"] #app > header{background:rgba(255,255,255,.96)!important;border-color:#e2e8f0!important;box-shadow:0 4px 18px rgba(15,23,42,.08)!important}
+html[data-theme="light"] #header-name{filter:none!important;text-shadow:none!important}
+html[data-theme="light"] #header-tagline{color:#64748b!important}
+html[data-theme="light"] .app-header-actions button{background:#f1f5f9!important;color:#334155!important;border-color:#e2e8f0!important}
+html[data-theme="light"] #dashboardSummary h2,html[data-theme="light"] #dashboardSummary .text-slate-500{color:#1e293b!important}
+html[data-theme="light"] .admin-main-nav{background:rgba(255,255,255,.97)!important;border-color:#e2e8f0!important;box-shadow:0 8px 24px rgba(15,23,42,.10)!important}
+html[data-theme="light"] .admin-main-nav .tab{color:#475569!important}
+html[data-theme="light"] .admin-main-nav .tab:hover{background:#f1f5f9!important;color:#0f172a!important}
+html[data-theme="light"] .admin-main-nav .tab-active{background:linear-gradient(135deg,#e0f2fe,#dcfce7)!important;color:#0369a1!important;border-color:#bae6fd!important;box-shadow:none!important}
+html[data-theme="light"] #app .card,html[data-theme="light"] #app .card-soft,html[data-theme="light"] #app .analysis-card,html[data-theme="light"] #app .modern-analysis-card,html[data-theme="light"] #app .analysis-charts-grid>div,html[data-theme="light"] #app .fund-dashboard,html[data-theme="light"] #app .fund-chip,html[data-theme="light"] #app .metric-card,html[data-theme="light"] #app .summary-kpi,html[data-theme="light"] #app .profile-cover,html[data-theme="light"] #app .section-head,html[data-theme="light"] #app .full-analytics-card,html[data-theme="light"] #app .stat{color:#1e293b!important;background:#fff!important;border-color:#e2e8f0!important;box-shadow:0 5px 18px rgba(15,23,42,.06)!important}
+html[data-theme="light"] #app .card-soft,html[data-theme="light"] #app .fund-chip{background:#f8fafc!important}
+html[data-theme="light"] #app .text-slate-400,html[data-theme="light"] #app .text-slate-500,html[data-theme="light"] #app .text-slate-600{color:#64748b!important}
+html[data-theme="light"] #app .text-slate-700,html[data-theme="light"] #app .text-slate-800,html[data-theme="light"] #app .text-slate-900,html[data-theme="light"] #app .text-slate-950{color:#334155!important}
+html[data-theme="light"] #app .field,html[data-theme="light"] #app input,html[data-theme="light"] #app select,html[data-theme="light"] #app textarea{color:#1e293b!important;background:#fff!important;border-color:#cbd5e1!important}
+html[data-theme="light"] #app .field::placeholder,html[data-theme="light"] #app input::placeholder,html[data-theme="light"] #app textarea::placeholder{color:#94a3b8!important}
+html[data-theme="light"] #app option{background:#fff;color:#1e293b}
+html[data-theme="light"] #app .btn-soft{background:#eff6ff!important;color:#1d4ed8!important;border-color:#bfdbfe!important}
+html[data-theme="light"] #app .btn-dark{background:#e2e8f0!important;color:#1e293b!important;border-color:#cbd5e1!important}
+html[data-theme="light"] #app .section-head{background:transparent!important;box-shadow:none!important}
+html[data-theme="light"] #preferencesModal .preferences-panel{background:#fff!important;color:#1e293b!important}
+html[data-theme="light"] #loader.readonly-loader{background:radial-gradient(circle at 50% 42%,#fff 0%,#f8fbff 48%,#eef4ff 100%)!important}
