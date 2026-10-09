@@ -1535,3 +1535,13 @@ body{font-family:'Hind Siliguri','Noto Sans Bengali',sans-serif!important;text-r
   html{scroll-behavior:auto!important}
   #app *,#app *:before,#app *:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
+
+/* Preferences: persistent light/dark appearance */
+html[data-theme="dark"] body{background:#0b1220!important;color:#e5e7eb!important;color-scheme:dark}
+html[data-theme="dark"] #app .card,html[data-theme="dark"] #app .card-soft,html[data-theme="dark"] #app .glass,html[data-theme="dark"] #app .tab,html[data-theme="dark"] #app .analysis-card,html[data-theme="dark"] #app .fund-dashboard,html[data-theme="dark"] #app .fund-chip,html[data-theme="dark"] #app .custom-select-menu,html[data-theme="dark"] #app .custom-select-option{background:#111c2e!important;color:#e5e7eb!important;border-color:#334155!important}
+html[data-theme="dark"] #app .text-slate-500,html[data-theme="dark"] #app .text-slate-600,html[data-theme="dark"] #app .text-slate-700{color:#b6c2d2!important}
+html[data-theme="dark"] #app .bg-white,html[data-theme="dark"] #app .bg-slate-50,html[data-theme="dark"] #app .bg-slate-100,html[data-theme="dark"] #app .bg-indigo-50{background:#172337!important;color:#e5e7eb!important}
+html[data-theme="dark"] #app input,html[data-theme="dark"] #app select,html[data-theme="dark"] #app textarea,html[data-theme="dark"] #app .field{background:#0f1a2b!important;color:#f1f5f9!important;border-color:#475569!important}
+html[data-theme="dark"] #app table th{background:#172337!important;color:#cbd5e1!important}html[data-theme="dark"] #app table td{border-color:#334155!important}html[data-theme="dark"] #app .tab-active{background:linear-gradient(135deg,#1e293b,#111c2e)!important}
+html[data-theme="dark"] .preferences-panel{background:#111c2e!important;color:#e5e7eb!important;border:1px solid #334155}html[data-theme="dark"] .preferences-panel .text-slate-500{color:#b6c2d2!important}html[data-theme="dark"] .preferences-panel .border{border-color:#334155!important}html[data-theme="dark"] .preferences-panel .bg-slate-100{background:#243247!important;color:#e5e7eb!important}
+#open-preferences{font-size:20px;display:inline-flex;align-items:center;justify-content:center;flex:none}#header-name{max-width:min(42vw,230px);height:auto;max-height:48px;object-fit:contain}#header-tagline{max-width:48vw}

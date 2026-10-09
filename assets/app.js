@@ -178,7 +178,7 @@ async function uploadMemberDocuments(files,folder){
     return results.filter(Boolean);
   }finally{hideOperationLoading()}
 }
-function renderBrand(){const b=S.brand||DEFAULT_BRAND;$('header-tagline').textContent=[b.tagline,b.established?`স্থাপিত: ${b.established}`:'' ].filter(Boolean).join(' • ');$('header-logo').src=b.logoUrl||'https://placehold.co/56x56/EEF2FF/4338CA?text=Logo';$('header-logo').onerror=()=>$('header-logo').src='https://placehold.co/56x56/EEF2FF/4338CA?text=Logo';$('page-title').textContent=(b.name||'সমিতি')}
+function renderBrand(){const b=S.brand||DEFAULT_BRAND;$('header-tagline').textContent=[b.tagline,b.established?`স্থাপিত: ${b.established}`:'' ].filter(Boolean).join(' • ');$('page-title').textContent=(b.name||'সমিতি')}
 function renderNotice(){const n=S.notice||DEFAULT_NOTICE;const d=null,home=$('home-notice-content');const date=n.updatedAt?'সর্বশেষ আপডেট: '+new Date(n.updatedAt).toLocaleString('bn-BD'):'';if($('notice-date'))$('notice-date').textContent=date;if($('home-notice-date'))$('home-notice-date').textContent=date;const img=n.imageUrl||((n.imageUrls||[])[0]||'');if(!n.title&&!n.text&&!img){const empty='<div class="text-sm text-slate-400 py-3">আপাতত কোনো নতুন নোটিশ নেই।</div>';if(d)d.innerHTML='<div class="card-soft p-8 text-center text-slate-400">আপাতত কোনো নতুন নোটিশ নেই।</div>';if(home)home.innerHTML=empty;return}const body=`${img?`<img src="${esc(img)}" class="w-full max-h-72 object-cover rounded-2xl border mb-4" onerror="this.remove()">`:''}<div><h4 class="font-extrabold text-lg">${esc(n.title||'অফিসিয়াল নোটিশ')}</h4>${n.text?`<p class="whitespace-pre-line text-sm leading-7 text-slate-600 mt-2">${esc(n.text)}</p>`:''}</div>`;if(d)d.innerHTML=body;if(home)home.innerHTML=body}
 
 function fundBalances(){
