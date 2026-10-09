@@ -1252,3 +1252,16 @@ setTimeout(()=>{
     $('app').classList.remove('hiddenx');
   }
 },7000);
+
+
+// User-facing preferences: local-only settings; Firebase data/schema untouched.
+(()=>{
+ const $p=id=>document.getElementById(id);
+ const themeKey='arjs_app_theme_v1',langKey='arjs_app_language_v1';
+ const applyTheme=t=>{const v=t==='light'?'light':'dark';document.documentElement.setAttribute('data-app-theme',v);try{localStorage.setItem(themeKey,v)}catch(e){};const s=$p('appThemeSelect');if(s)s.value=v};
+ const applyLanguage=l=>{const v=l==='en'?'en':'bn';document.documentElement.lang=v;try{localStorage.setItem(langKey,v)}catch(e){};const map={bn:{title:'⚙️ অ্যাপ সেটিংস',subtitle:'আপনার পছন্দ অনুযায়ী অ্যাপ সাজান',theme:'থিম পরিবর্তন (Theme)',themeHelp:'দিন বা রাত অনুযায়ী আপনার পছন্দের থিম বেছে নিন।',language:'ভাষা (Language)',languageHelp:'ভাষা পছন্দ সংরক্ষিত থাকবে।',about:'অ্যাপ সম্পর্কিত (About App)',version:'অ্যাপ ভার্সন',developer:'সফটওয়্যার নির্মাতা',email:'ইমেইল',facebook:'ফেসবুক',ok:'ঠিক আছে'},en:{title:'⚙️ App Settings',subtitle:'Personalize your app experience',theme:'Theme Settings',themeHelp:'Choose a theme for your preferred lighting conditions.',language:'Language',languageHelp:'Your language preference will be saved on this device.',about:'About App',version:'App Version',developer:'Software Developer',email:'Email',facebook:'Facebook',ok:'Done'}}[v];const ids={'prefs-title':'title','prefs-subtitle':'subtitle','prefs-theme-label':'theme','prefs-theme-help':'themeHelp','prefs-language-label':'language','prefs-language-help':'languageHelp','prefs-about-title':'about','prefs-version-label':'version','prefs-developer-label':'developer','prefs-email-label':'email','prefs-facebook-label':'facebook','close-app-preferences-bottom':'ok'};Object.entries(ids).forEach(([id,k])=>{const el=$p(id);if(el)el.textContent=map[k]});const s=$p('appLanguageSelect');if(s)s.value=v};
+ try{applyTheme(localStorage.getItem(themeKey)||'dark');applyLanguage(localStorage.getItem(langKey)||'bn')}catch(e){applyTheme('dark');applyLanguage('bn')}
+ $p('open-app-preferences')?.addEventListener('click',()=>{$p('appPreferencesModal')?.classList.remove('hiddenx')});
+ const close=()=> $p('appPreferencesModal')?.classList.add('hiddenx');$p('close-app-preferences')?.addEventListener('click',close);$p('close-app-preferences-bottom')?.addEventListener('click',close);
+ $p('appThemeSelect')?.addEventListener('change',e=>applyTheme(e.target.value));$p('appLanguageSelect')?.addEventListener('change',e=>applyLanguage(e.target.value));
+})();
